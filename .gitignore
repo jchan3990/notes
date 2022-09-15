@@ -1,3 +1,2 @@
 ### Ignore node modules in all folders
 ./node_modules
-*/node_modules
