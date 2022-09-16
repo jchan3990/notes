@@ -1,5 +1,7 @@
 import { React } from 'react';
 
+import './App.css';
+
 import NotesList from './components/NotesList.jsx';
 
 const App = () => {
