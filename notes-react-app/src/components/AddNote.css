@@ -1,6 +1,5 @@
 .note.new {
   background-color: #67d7cc;
-  border: solid black 1px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -25,7 +24,6 @@
 
 .save:hover {
   background-color: #ededed;
-  cursor: pointer;
 }
 
 textarea {
