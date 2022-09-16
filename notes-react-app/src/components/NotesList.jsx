@@ -1,9 +1,15 @@
 import { React } from 'react';
 
+import './NotesList.css';
+import Note from './Note';
+
 const NotesList = () => {
   return (
     <div className="notes-list">
-
+      <Note />
+      <Note />
+      <Note />
+      <Note />
     </div>
   )
 }
