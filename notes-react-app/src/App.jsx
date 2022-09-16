@@ -1,8 +1,12 @@
 import { React } from 'react';
 
+import NotesList from './components/NotesList.jsx';
+
 const App = () => {
   return (
-    <h1>Hello User!</h1>
+    <div className='container'>
+      <NotesList />
+    </div>
   )
 };
 
