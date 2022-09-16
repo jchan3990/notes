@@ -4,10 +4,10 @@ import { nanoid } from 'nanoid';
 import './App.css';
 
 import NotesList from './components/NotesList.jsx';
+import SearchBar from './components/SearchBar.jsx';
 
 const App = () => {
   const [notes, setNotes] = useState([
-
     {
       id: nanoid(),
       text: "Take out the trash",
@@ -30,6 +30,8 @@ const App = () => {
     },
   ]);
 
+  const [searchText, setSearchText] = useState('');
+
   const addNote = (text) => {
     const date = new Date();
     const newNote = {
@@ -49,7 +51,8 @@ const App = () => {
 
   return (
     <div className='container'>
-      <NotesList notes={notes} addNote={addNote} deleteNote={deleteNote} />
+      <SearchBar searchText={setSearchText} />
+      <NotesList notes={notes.filter(note => note.text.toLowerCase().includes(searchText))} addNote={addNote} deleteNote={deleteNote} />
     </div>
   )
 };
