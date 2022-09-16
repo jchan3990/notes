@@ -1,7 +1,5 @@
 import { React, useState } from 'react';
 
-import './AddNote.css';
-
 const AddNote = ({ addNote }) => {
   const [newNote, setNewNote] = useState('');
 

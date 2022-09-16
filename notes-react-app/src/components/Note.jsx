@@ -1,8 +1,6 @@
 import { React } from 'react';
 import { MdDeleteForever } from 'react-icons/md';
 
-import './Note.css';
-
 const Note = ({ id, text, createDate, deleteNote }) => {
   return (
     <div className='note'>

@@ -1,6 +1,5 @@
 import { React } from 'react';
 
-import './NotesList.css';
 import Note from './Note.jsx';
 import AddNote from './AddNote.jsx';
 
