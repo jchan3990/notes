@@ -4,3 +4,74 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+
+.note {
+  background-color: #fef68a;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  min-height: 170px;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.note-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.notes-list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+}
+
+.note.new {
+  background-color: #67d7cc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  min-height: 170px;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+
+.save {
+  background-color: #e1e1e1;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+.save:hover {
+  background-color: #ededed;
+}
+
+.search-bar {
+  align-items: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 20px;
+  display: flex;
+  margin-bottom: 1.5em;
+  padding: 5px;
+}
+
+textarea {
+  background: none;
+  border: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input {
+  background-color: rgb(233,233,233);
+  border: none;
+}
