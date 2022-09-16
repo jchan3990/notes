@@ -3,13 +3,12 @@ import { React } from 'react';
 import './NotesList.css';
 import Note from './Note';
 
-const NotesList = () => {
+const NotesList = ({ notes }) => {
   return (
     <div className="notes-list">
-      <Note />
-      <Note />
-      <Note />
-      <Note />
+      {notes.map(note => (
+        <Note key={note.id} text={note.text} createDate={note.createDate} />
+      ))}
     </div>
   )
 }
