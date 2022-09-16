@@ -3,8 +3,9 @@ import { nanoid } from 'nanoid';
 
 import './App.css';
 
-import NotesList from './components/NotesList.jsx';
+import Header from './components/Header.jsx';
 import SearchBar from './components/SearchBar.jsx';
+import NotesList from './components/NotesList.jsx';
 
 const App = () => {
   const [notes, setNotes] = useState([
@@ -31,6 +32,7 @@ const App = () => {
   ]);
 
   const [searchText, setSearchText] = useState('');
+  const [modeToggle, setModeToggle] = useState(0);
 
   const addNote = (text) => {
     const date = new Date();
@@ -49,8 +51,13 @@ const App = () => {
     setNotes(newNotes);
   }
 
+  const toggleMode = () => modeToggle === 0 ? setModeToggle(1) : setModeToggle(0);
+  
+  const modeClassname = modeToggle === 0 ? 'container' : 'dark-mode';
+
   return (
-    <div className='container'>
+    <div className={modeClassname}>
+      <Header modeToggle={modeToggle} toggleMode={toggleMode} />
       <SearchBar searchText={setSearchText} />
       <NotesList notes={notes.filter(note => note.text.toLowerCase().includes(searchText))} addNote={addNote} deleteNote={deleteNote} />
     </div>
