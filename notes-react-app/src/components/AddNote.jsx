@@ -17,6 +17,7 @@ const AddNote = ({ addNote }) => {
         rows='8'
         cols='10'
         placeholder='Type to add a note...'
+        value = {newNote}
         maxLength='200'
         onChange={e => setNewNote(e.target.value)}
       ></textarea>
