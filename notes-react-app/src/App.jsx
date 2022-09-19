@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
 import { nanoid } from 'nanoid';
 
 import './App.css';
@@ -8,31 +8,14 @@ import SearchBar from './components/SearchBar.jsx';
 import NotesList from './components/NotesList.jsx';
 
 const App = () => {
-  const [notes, setNotes] = useState([
-    {
-      id: nanoid(),
-      text: "Take out the trash",
-      createDate: "09/15/2022"
-    },
-    {
-      id: nanoid(),
-      text: "Update fantasy lineup. Stupid Keenan Allen",
-      createDate: "09/14/2022"
-    },
-    {
-      id: nanoid(),
-      text: "Buy flowers for Tiffany",
-      createDate: "10/15/2022"
-    },
-    {
-      id: nanoid(),
-      text: "Get reservation for Bansang",
-      createDate: "10/30/2022"
-    },
-  ]);
+  const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('react-notes-data')) ?? []);
 
   const [searchText, setSearchText] = useState('');
   const [modeToggle, setModeToggle] = useState(0);
+
+  useEffect(() => {
+    localStorage.setItem('react-notes-data', JSON.stringify(notes));
+  }, [notes])
 
   const addNote = (text) => {
     const date = new Date();
