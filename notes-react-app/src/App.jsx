@@ -11,11 +11,15 @@ const App = () => {
   const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('react-notes-data')) ?? []);
 
   const [searchText, setSearchText] = useState('');
-  const [modeToggle, setModeToggle] = useState(0);
+  const [modeToggle, setModeToggle] = useState(JSON.parse(localStorage.getItem('react-notes-mode')));
 
   useEffect(() => {
     localStorage.setItem('react-notes-data', JSON.stringify(notes));
   }, [notes])
+
+  useEffect(() => {
+    localStorage.setItem('react-notes-mode', JSON.stringify(modeToggle));
+  }, [modeToggle])
 
   const addNote = (text) => {
     const date = new Date();
