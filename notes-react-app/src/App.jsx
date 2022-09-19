@@ -53,7 +53,7 @@ const App = () => {
 
   const toggleMode = () => modeToggle === 0 ? setModeToggle(1) : setModeToggle(0);
   
-  const modeClassname = modeToggle === 0 ? 'container' : 'dark-mode';
+  const modeClassname = modeToggle === 0 ? 'container' : 'container dark-mode';
 
   return (
     <div className={modeClassname}>
